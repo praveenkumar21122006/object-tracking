@@ -1,0 +1,8 @@
+yolov8n.pt
+output
+uploads
+__pycache__
+*.pyc
+.git
+.venv
+venv
