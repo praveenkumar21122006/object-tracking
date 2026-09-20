@@ -1,0 +1,9 @@
+# Fallback if Dockerfile not used (Nixpacks)
+[phases.setup]
+nixPkgs = ["python310", "libgl1", "ffmpeg"]
+
+[phases.install]
+cmds = ["pip install -r requirements.txt"]
+
+[start]
+cmd = "gunicorn -w 2 -b 0.0.0.0:$PORT web_app:app"
