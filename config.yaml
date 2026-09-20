@@ -1,0 +1,29 @@
+# Real-Time Object Tracking Config
+detection:
+  model: "yolov8n.pt"          # yolov8n.pt (fast) / yolov8s.pt / yolov8m.pt
+  conf_threshold: 0.35
+  iou_threshold: 0.45
+  classes: null                # null = all COCO classes, or list e.g. [0,2,7]  0:person, 2:car, 7:truck
+  imgsz: 640
+
+tracking:
+  tracker_type: "bytetrack"    # bytetrack | sort | centroid
+  track_thresh: 0.5            # ByteTrack high thresh
+  track_buffer: 30             # frames to keep lost tracks
+  match_thresh: 0.8            # matching IoU threshold
+  min_hits: 3                  # SORT min hits to confirm track
+
+video:
+  source: 0                    # 0=webcam, "video.mp4", "rtsp://...", or "youtube_url"
+  output: "output/tracked_output.mp4"
+  show: true
+  save: false
+  fps: 30
+  width: 1280
+  height: 720
+
+visualization:
+  draw_trails: true
+  trail_length: 30
+  draw_speed: false            # estimate speed (needs calibration)
+  line_thickness: 2

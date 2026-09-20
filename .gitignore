@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+*.pt
+*.onnx
+output/
+*.mp4
+!sample.mp4
+screenshots/
+.venv/
